@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Arx Net</title>
+    <link rel='stylesheet' href='innerGraphStyle.css'>
+    <link rel='stylesheet' href='HTMLstyles.css'>
+    <!-- <link rel='stylesheet' href='s.css'> -->
+    <!-- <link rel='stylesheet' href='GraphWindowStyle.css'> -->
+    <script src='D3.js'></script> <!--D3 library contains the necessary elements to generate and manipulate graphs -->
+    <!-- <script src='graphMethods.js'></script> Contains implementation of commonly used graph methods -->
+</head>
+
+<body>
+    <div class='container'>
+        <div class='graphGenerator'>
+            <h1 id='instructions'>Arx Net
+                <button id = 'about' title = 'About this application'><img src = 'about.png'></button>
+            </h1>
+            <div class='sourceInput'>
+                <input type='text' id='graphName' placeholder='Graph name (Can be left blank)'> <br>
+                <input type='text' id='edges' placeholder='E.g., AB5, 12-3.14, (B_C_-2.71)' autocomplete='off'
+                    spellcheck='false'
+                    value='AB7, BA9, AC5, AD3, BC4, BE6, CD2, CF8, DE5, DG7, EF3, EH4, FG6, FI7, GH2, HI5, HJ9, IJ4'>
+                <br>
+                <input type='checkbox' id='directed' checked>Directed
+                <input type='checkbox' id='weighted' checked>Weighted
+                <br>
+                <button id='generateGraph' onclick='addGraph()'>Generate Graph</button>
+                <div class='allGraphControls'>
+                    <button id='closeAll'>Minimize all graphs</button>
+                    <button id='showAll'>Show all graphs</button>
+                    <button id='clearAll'>Clear all graphs</button>
+                </div>
+            </div>
+            <div id='graphList' class='graphList'></div>
+        </div>
+        <br><br><br>
+        <hr style = 'color: #ccc;'>
+        <div class='outliner'>
+            <h3>
+                Graphs
+                <button id = 'view4' title = '4 Graph view'>
+                    <img src = 'disable4g.png'>
+                </button>
+                <button id = 'view9' title = '9 Graph view'>
+                    <img src = 'disable9g.png'>
+                </button>
+            </h3>
+        </div>
+    </div>
+</body>
+<script>
+    const outliner = document.querySelector('.outliner');
+</script>
+<script src='BodyScript.js'></script>
+<script src='GraphGen.js'></script>
+</html>

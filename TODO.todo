@@ -1,0 +1,18 @@
+Add input type text field for radius
+
+Add graph methods and possible validations to the graph window instead of body
+
+Add instructions
+
+Rework parse edges logic
+
+Change hardcoded values
+
+Possible additions:
+    Snap to grid
+    Edge and node highlighting
+    Node operation (delete node, rename node), edge operation (change weight), edge naming
+    Add nodes by just clickling on the svg
+    Tree logic
+
+Major change: Use WebGPU to render the graph on the GPU
