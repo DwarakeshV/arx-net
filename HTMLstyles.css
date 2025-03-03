@@ -1,18 +1,76 @@
+/* Global Styles */
 * {
     box-sizing: border-box;
 }
 
 body {
-    background-color: #282828;
-    font-family: Arial, sans-serif;
     height: 100vh;
-    padding: 0;
+    width: 100vw;
     margin: 0;
-    text-align: left;
-    /* overflow: hidden; */
+    padding: 0;
+    overflow: hidden;
+
+    background-color: #282828;
     color: #fff;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+
+    text-align: left;
 }
 
+/* Typography */
+h1,
+h3 {
+    color: #bbb;
+    /* text-align: center; */
+}
+
+.sourceInput {
+    color: #ccc;
+    outline: none;
+}
+
+/* Buttons */
+button {
+    font-size: 10px;
+    outline: none;
+}
+
+#generateGraph { /* Generate Graph Button */
+    background-color: #3f3f3f;
+    border: none;
+    color: #ccc;
+    padding: 5px 10px;
+    margin-top: 20px;
+    font-size: 16px;
+    border-radius: 2px;
+}
+
+#generateGraph:hover {
+    background-color: #4772b3;
+}
+
+.showHideDeleteDiv button,
+.outliner button,
+h1 button {
+    display: inline-block;
+    background: none;
+    color: #979797;
+    border: none;
+    border-radius: 3px;
+    padding: 3px 10px;
+    text-align: left;
+    margin: 0;
+    vertical-align: middle;
+}
+
+.showHideDeleteDiv button:hover,
+h1 button:hover {
+    background: none;
+    filter: brightness(2);
+}
+
+/* Images */
 img {
     vertical-align: middle;
     height: 20px;
@@ -20,6 +78,45 @@ img {
     filter: invert(1) brightness(0.7);
 }
 
+.showHideDeleteDiv img,
+.outliner img {
+    filter: invert(1) brightness(0.7);
+    width: 16px;
+    height: 16px;
+}
+
+/* Sidebar */
+#sidebar {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    aspect-ratio: 1;
+    padding: none;
+    margin: none;
+    outline: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+#sidebar:hover {
+    filter: brightness(2);
+}
+
+/* Inputs */
+input[type="text"] {
+    width: 100%;
+    display: block;
+    padding: 10px;
+    background-color: #282828;
+    border: 2px solid #bbb;
+    font-size: 14px;
+    color: #ccc;
+    outline: none;
+}
+
+/* Checkbox */
 input[type="checkbox"] {
     appearance: none;
     background-color: #545454;
@@ -53,12 +150,16 @@ input[type="checkbox"]:checked::before {
     left: 50%;
 }
 
+/* Layout & Containers */
 .container {
+    position: absolute;
+    top: 0;
+    right: 0;
     height: 100vh;
     width: 25%;
     background-color: #1d1d1d;
-    float: right;
     padding: 10px;
+    z-index: 9998;
 }
 
 .graphGenerator {
@@ -66,7 +167,9 @@ input[type="checkbox"]:checked::before {
     margin-left: 20px;
 }
 
+/* Outliner */
 .outliner {
+    display: block;
     height: 55%;
     color: #979797;
     background-color: #1d1d1d;
@@ -74,7 +177,7 @@ input[type="checkbox"]:checked::before {
     overflow: auto;
 }
 
-/* Style for the scrollbar */
+/* Scrollbar */
 .outliner::-webkit-scrollbar {
     width: 10px;
 }
@@ -93,69 +196,9 @@ input[type="checkbox"]:checked::before {
     background-color: #555;
 }
 
-.outliner h2 {
-    color: #bbb;
-    text-align: center;
-    text-decoration: underline;
-}
-
-.outliner h3 {
-    color: #bbb;
-}
-
-button {
-    outline: none;
-}
-
-#generateGraph {
-    background-color: #3f3f3f;
-    border: none;
-    color: #ccc;
-    padding: 5px 10px;
-    margin-top: 20px;
-    font-size: 16px;
-    border-radius: 2px;
-}
-
-#generateGraph:hover {
-    background-color: #4772b3;
-}
-
-h1 {
-    color: #bbb;
-    text-align: center;
-}
-
-.sourceInput {
-    color: #ccc;
-}
-
-input[type="text"] {
-    width: 100%;
-    display: block;
-    padding: 10px;
-    background-color: #282828;
-    border: 2px solid #bbb;
-    font-size: 14px;
-    color: #ccc;
-    outline: none;
-}
-
-#edges {
-    color: #ccc;
-    outline: none;
-}
-
-/* #graphName {
-    width: 100%;
-    margin-right: 20px;
-    margin-bottom: 20px;
-} */
-
+/* Show/Hide/Delete Div */
 .showHideDeleteDiv {
-    font-size: 14px;
     display: flex;
-    margin: none;
     align-items: center;
     justify-content: space-between;
     padding-left: 10px;
@@ -167,24 +210,6 @@ input[type="text"] {
     background-color: #3f3f3f;
 }
 
-.showHideDeleteDiv button, .outliner button, h1 button {
-    display: inline-block;
-    background: none;
-    color: #979797;
-    border: none;
-    border-radius: 3px;
-    padding: 3px 10px;
-    text-align: left;
-    margin: 0;
-    vertical-align: middle;
-}
-
-.showHideDeleteDiv img, .outliner img {
-    filter: invert(1) brightness(0.7);
-    width: 16px;
-    height: 16px;
-}
-
 .showHideDeleteDiv input[type='text'] {
     cursor: default;
     border: none;
@@ -192,7 +217,6 @@ input[type="text"] {
     background: none;
     color: #979797;
     width: 30%;
-    font-size: 14px;
     padding: 5px;
     border: 1px solid transparent;
 }
@@ -203,11 +227,7 @@ input[type="text"] {
     background-color: #1d1d1d;
 }
 
-.showHideDeleteDiv button:hover, .outliner button:hover, h1 button:hover {
-    background: none;
-    filter: brightness(2);
-}
-
+/* Graph Controls */
 .allGraphControls,
 .graphOptions {
     display: none;
@@ -226,7 +246,6 @@ input[type="text"] {
     width: 100%;
     height: auto;
     text-align: left;
-    font-size: 14px;
     padding: 3px 10px 3px 15px;
     background-color: #181818;
     color: #cccccc;

@@ -17,7 +17,7 @@
     <div class='container'>
         <div class='graphGenerator'>
             <h1 id='instructions'>Arx Net
-                <button id = 'about' title = 'About this application'><img src = 'about.png'></button>
+                <button id='about' title='About this application'><img src='about.png'></button>
             </h1>
             <div class='sourceInput'>
                 <input type='text' id='graphName' placeholder='Graph name (Can be left blank)'> <br>
@@ -38,23 +38,27 @@
             <div id='graphList' class='graphList'></div>
         </div>
         <br><br><br>
-        <hr style = 'color: #ccc;'>
+        <hr style='color: #ccc;'>
         <div class='outliner'>
             <h3>
                 Graphs
-                <button id = 'view4' title = '4 Graph view'>
-                    <img src = 'disable4g.png'>
+                <button id='view4' title='4 Graph view'>
+                    <img src='disable4g.png'>
                 </button>
-                <button id = 'view9' title = '9 Graph view'>
-                    <img src = 'disable9g.png'>
+                <button id='view9' title='9 Graph view'>
+                    <img src='disable9g.png'>
                 </button>
             </h3>
         </div>
     </div>
+    <button id='sidebar' title='Show/hide sidebar'><img src='sidebar.png' style='width:30px; height: 30px;'></button>
 </body>
 <script>
     const outliner = document.querySelector('.outliner');
+    const graphGenerator = document.querySelector('.graphGenerator');
+    const containerAll = document.querySelector('.container');
 </script>
 <script src='BodyScript.js'></script>
 <script src='GraphGen.js'></script>
+
 </html>
